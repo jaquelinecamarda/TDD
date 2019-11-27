@@ -11,20 +11,25 @@ describe 'Matchers de comparação' do
 
   it 'be_between inclusive e exclusive' do
     expect(5).to be_between(2, 7).inclusive
-    expect(5).to be_between(2, 7).exclusive #exclui os extremos
+    expect(5).to be_between(2, 7).exclusive # exclui os extremos
+  end
+
+  it 'be_between inclusive/falhas agregadas' do
+    expect(3).to be_between(2, 7).inclusive
+    expect(6).to be_between(2, 7).exclusive # exclui os extremos
   end
 
   it 'match' do
-    expect("fulano@com.br").to match(/..@../)
+    expect('fulano@com.br').to match(/..@../)
   end
 
   it 'start_with' do
-    expect("fulano de tal").to start_with("fulano")
-    expect([1,2,3]).to start_with(1)
+    expect('fulano de tal').to start_with('fulano')
+    expect([1, 2, 3]).to start_with(1)
   end
 
   it 'end_with' do
-    expect("fulano de tal").to end_with("tal")
-    expect([1,2,3]).to end_with(3)
+    expect('fulano de tal').to end_with('tal')
+    expect([1, 2, 3]).to end_with(3)
   end
 end

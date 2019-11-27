@@ -14,15 +14,17 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
-
-
-  config.before(:suite) do
-    puts ">>>> ANTES de toda a suíte de testes"
+  config.define_derived_metadata do |meta|
+    meta[:aggregate_failures] = true
   end
 
-  config.after(:suite) do
-    puts ">>>> DEPOIS de toda a suíte de testes"
-  end
+  #config.before(:suite) do
+   # puts ">>>> ANTES de toda a suíte de testes"
+  #end
+
+  #config.after(:suite) do
+   # puts ">>>> DEPOIS de toda a suíte de testes"
+  #end
 
 
   # rspec-expectations config goes here. You can use an alternate
